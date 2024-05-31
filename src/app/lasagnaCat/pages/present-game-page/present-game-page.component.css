@@ -1,0 +1,70 @@
+.showPage {
+    padding: 15px;
+}
+
+.imgsSection {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+
+.imgs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 1100px;
+    height: 550px;
+    border: 1px solid #AC2020;
+    border-radius: 8px;
+}
+
+.btnsContainer {
+    display: flex;
+    background-color: #AC2020;
+    border-radius: 8px;
+    justify-content: space-evenly;
+    width: 100%;
+}
+.miniBtns {
+    height: 15px;
+    width: 15px;
+    background-color: #F2EECF;
+    border-radius: 8px;
+    margin: 16px 8px;
+}
+
+.miniBtns.activeBtn {
+    height: 20px;
+    width: 20px;
+    border-radius: 25px;
+    background-color: #e8c85d;
+}
+
+.downloadBtn {
+    font-family: LBSemibold;
+    font-size: 14px;
+    color: #fff;
+    background-color: #b0230a;
+    padding: 0 20px;
+    height: 50px;
+    margin-top: 24px;
+    border-radius: 8px;
+}
+
+a {
+    color: #fff;
+}
+
+.saveBtn {
+    font-family: LBSemibold;
+    font-size: 14px;
+    color: #fff;
+    background-color: #04c05c;
+    padding: 0 20px;
+    height: 50px;
+    margin-top: 16px;
+    border-radius: 8px;
+    box-shadow: 2px 2px #1845286e;
+}

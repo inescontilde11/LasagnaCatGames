@@ -1,0 +1,107 @@
+<shared-nav-bar [rol]="rol"></shared-nav-bar>
+<div class="formContainer">
+    <form [formGroup]="gameForm" (ngSubmit)="uploadGame()">
+        <div class="containers">
+            <h4>Título y descripción</h4>
+            <label for="titleInput">Título del juego</label>
+            <input type="text" formControlName="title" id="titleInput" maxlength="50">
+            <label for="description">Acerca de este juego</label>
+            <input type="text" formControlName="desc" id="description" maxlength="500">
+        </div>
+        <hr>
+        <div class="categoriesContainer">
+            <h4>Géneros</h4>
+            <div class="cbContainer">
+                <label for="action">Acción</label>
+                <input type="checkbox" value="Acción" id="action" [checked]="actionChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="estrategy">Estrategia</label>
+                <input type="checkbox" value="Estrategia" id="estrategy" [checked]="strategyChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="adventure">Aventura</label>
+                <input type="checkbox" value="Aventura" id="adventure" [checked]="adventureChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="rol">Rol</label>
+                <input type="checkbox" value="Rol" id="rol" [checked]="roleChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="simulation">Simulación</label>
+                <input type="checkbox" value="Simulación" id="simulation" [checked]="simulationChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="races">Carreras</label>
+                <input type="checkbox" value="Carreras" id="races" [checked]="racesChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="puzzles">Puzles</label>
+                <input type="checkbox" value="Puzles" id="puzzles" [checked]="puzzlesChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="casual">Casual</label>
+                <input type="checkbox" value="Casual" id="casual" [checked]="casualChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="platform">Plataformas</label>
+                <input type="checkbox" value="Plataformas" id="platform" [checked]="platformChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="sports">Deportes</label>
+                <input type="checkbox" value="Deportes" id="sports" [checked]="sportsChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="horror">Terror</label>
+                <input type="checkbox" value="Terror" id="horror" [checked]="horrorChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <br>
+            <h4>Jugadores</h4>
+            <div class="cbContainer">
+                <label for="onePlayer">Un solo jugador</label>
+                <input type="checkbox" value="Un solo jugador" id="onePlayer" [checked]="this.onePlayerChecked" (click)="cbCategoryValues($event)">
+            </div>
+            <div class="cbContainer">
+                <label for="multiplayer">Multijugador</label>
+                <input type="checkbox" value="Multijugador" id="multiplayer" [checked]="this.multiplayerChecked" (click)="cbCategoryValues($event)">
+            </div>
+        </div>
+        <hr>
+        <table>
+            <tr>
+                <th>Imágen 1</th>
+                <th>Imágen 2</th>
+                <th>Imágen 3</th>
+            </tr>
+            <tr>
+                <td><img [src]="event1.url || this.imgUrl1"></td>
+                <td><img [src]="event2.url || this.imgUrl2"></td>
+                <td><img [src]="event3.url || this.imgUrl3"></td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="file" class="notThisInput" formControlName="img1" (change)="fileValue($event, 1)">
+                </td>
+                <td>
+                    <input type="file" class="notThisInput" formControlName="img2" (change)="fileValue($event, 2)">
+                </td>
+                <td>
+                    <input type="file" class="notThisInput" formControlName="img3" (change)="fileValue($event, 3)">
+                </td>
+            </tr>
+        </table>
+
+        <div>
+            <label for="fileInput">
+                <span class="fileBtn">Subir archivo .exe o .jar</span>
+                <span class="fileName">{{this.gameFileName}}</span>
+            </label>
+            <input type="file" style="display: none;" formControlName="archiveexegame" id="fileInput" (change)="gameFileValue($event)">
+        </div>
+        <div class="submitContainer">
+            <input type="submit" [disabled]="gameForm.invalid || this.categories.length <= 0" class="submitBtn" value="Editar juego">
+        </div>
+
+    </form>
+</div>
+<shared-footer style="position: relative; bottom: 0; width: 100%; margin-top: 10px;"></shared-footer>

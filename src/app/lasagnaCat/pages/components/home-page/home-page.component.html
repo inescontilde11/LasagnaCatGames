@@ -1,0 +1,71 @@
+<shared-nav-bar [rol]="rol"></shared-nav-bar>
+<div class="homeContainer">
+    <div class="left">
+        Filtros
+        <p>Géneros</p>
+            <div class="cbContainer">
+                <input type="checkbox" value="Acción" id="action" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="action">Acción</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Estrategia" id="estrategy" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="estrategy">Estrategia</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Aventura" id="adventure" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="adventure">Aventura</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Rol" id="rol" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="rol">Rol</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Simulación" id="simulation" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="simulation">Simulación</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Carreras" id="races" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="races">Carreras</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Puzles" id="puzzles" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="puzzles">Puzles</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Casual" id="casual" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="casual">Casual</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Plataformas" id="platform" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="platform">Plataformas</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Deportes" id="sports" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="sports">Deportes</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Terror" id="horror" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="horror">Terror</label>
+            </div>
+            <p>Jugadores</p>
+            <div class="cbContainer">
+                <input type="checkbox" value="Un solo jugador" id="onePlayer" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="onePlayer">Un solo jugador</label>
+            </div>
+            <div class="cbContainer">
+                <input type="checkbox" value="Multijugador" id="multiplayer" (click)="cbCategoryValues($event); filterResults($event, 'cb')">
+                <label for="multiplayer">Multijugador</label>
+            </div>
+    </div>
+    <div class="right">
+        <div class="searchBar">
+            <input style="width: 100%; padding: 5px;" type="search" placeholder="Buscar..." (change)="filterResults($event, 'search')">
+        </div>
+        <div class="games">
+            <app-game-container *ngFor="let game of filteredGames" [game]="game"></app-game-container>
+        </div>
+    </div>
+</div>
+<shared-footer style="position: relative; bottom: 0; width: 100%; margin-top: 10px;"></shared-footer>
+
+

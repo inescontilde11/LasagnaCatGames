@@ -1,0 +1,31 @@
+<shared-nav-bar [rol]="rol"></shared-nav-bar>
+<div class="container">
+    <div class="left">
+        <img class="profileImg" [src]="this_user.img">
+    </div>
+    <div class="right">
+        <div class="wrap-input100 form-inputs">
+            <span *ngIf="rol === 'DEV'" class="label-input100">Nombre de la empresa desarrolladora</span>
+            <span *ngIf="rol === 'PLAYER'" class="label-input100">Nombre de la empresa desarrolladora</span>
+            <input class="input100" [value]="this_user.username" [disabled]="true" type="text"
+                placeholder="Nombre de la empresa desarrolladora">
+        </div>
+
+        <div class="wrap-input100  form-inputs">
+            <span class="label-input100">Descripción</span>
+            <textarea class="input100" type="text" [disabled]="true" [value]="this_user.desc || ''"
+                placeholder="Descripción..."></textarea>
+        </div>
+
+        <div class="wrap-input100 form-inputs">
+            <span class="label-input100">Correo</span>
+            <input class="input100" type="email" [disabled]="true" [value]="this_user.email"
+                placeholder="Correo electrónico">
+        </div>
+
+        <div class="games">
+            <app-game-container *ngFor="let game of this_user.games" [game]="game"></app-game-container>
+        </div>
+    </div>
+</div>
+<shared-footer style="position: relative; bottom: 0; width: 100%; margin-top: 10px;"></shared-footer>

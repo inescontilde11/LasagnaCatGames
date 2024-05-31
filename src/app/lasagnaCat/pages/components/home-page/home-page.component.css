@@ -1,0 +1,46 @@
+.homeContainer {
+    display: grid;
+    grid-template-columns: 25% auto;
+    grid-gap: 50px;
+    padding: 16px;
+}
+
+.left {
+    margin-top: 10px;
+    background-color: #AC2020;
+    padding: 8px;
+    border-radius: 8px;
+    color: #F2EECF;
+}
+
+p {
+    margin-left: 20px;
+    font-family: LBRegular;
+    color: #F2EECF;
+    font-size: 18px;
+    margin-top: 5px;
+}
+
+label {
+    font-family: LBRegular;
+    font-size: 14px;
+}
+
+.cbContainer {
+    display: grid;
+    grid-template-columns: 25% auto;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+
+.searchBar {
+    width: 75%;
+    margin-bottom: 20px;
+}
+
+.games {
+    display: grid;
+    grid-template-columns: 25% auto auto auto;
+}

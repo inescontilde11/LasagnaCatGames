@@ -1,0 +1,25 @@
+.footer {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    background-color: #AC2020;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 10px;
+    height: 70px;
+}
+
+.footerBtn {
+    background-color: #E5DA71;
+    border-radius: 90px;
+    display: flex;
+    align-items: center;
+    padding-top: 5px;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.footerBtn a {
+    color: #7d2516;
+}

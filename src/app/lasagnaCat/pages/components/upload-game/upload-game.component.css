@@ -1,0 +1,112 @@
+.formContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.containers {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.cbContainer {
+    display: grid;
+    grid-template-columns: 35% auto;
+    align-items: center;
+    width: 35%;
+}
+
+.categoriesContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+#description {
+    height: 100px;
+    width: 35%;
+}
+
+h1, h3 {
+    color: #b0230a;
+    margin: 8px;
+}
+
+h4, th {
+    margin: 15px;
+    text-decoration: underline;
+}
+
+label {
+    font-size: 14px;
+    font-weight: 300;
+    margin: 15px;
+}
+
+img {
+    width: 415px;
+    height: 175px;
+    border: 1px solid #791515;
+}
+
+input {
+    border-radius: 5px;
+    border: 1px solid #791515;
+    width: 35%;
+    padding: 8px;
+}
+
+hr {
+    margin: 8px;
+}
+
+.notThisInput {
+    border: none;
+}
+
+.fileName {
+    color: black;
+    font-family: LBSemibold;
+    font-size: 14px;
+}
+
+.fileBtn {
+    border: none;
+    border-radius: 8px;
+    font-family: LBSemibold;
+    font-size: 14px;
+    color: #fff;
+    background-color: #b0230a;
+    padding: 5px 10px;
+    height: 30px;
+    margin-top: 24px;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+.submitContainer {
+    display: flex;
+    justify-content: end;
+}
+
+.submitBtn {
+    font-family: LBSemibold;
+    font-size: 16px;
+    color: #fff;
+    background-color: #b0230a;
+    padding: 0 20px;
+    height: 50px;
+    margin-top: 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    &:hover {
+        background-color: #791515;
+    }
+}
+
+.submitBtn:disabled {
+    background-color: grey;
+    cursor: not-allowed;
+}

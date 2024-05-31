@@ -1,0 +1,21 @@
+.matContainer {
+    background-color: white;
+    padding: 16px;
+}
+
+.btnsContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.btns {
+    font-family: LBRegular;
+    font-size: 16px;
+    color: #fff;
+    background-color: #b0230a;
+    padding: 0 20px;
+    height: 50px;
+    margin-top: 24px;
+    border-radius: 8px;
+}

@@ -1,0 +1,11 @@
+<div class="container"  (click)="redirecting(game._id)">
+    <img [src]="game.imgs[0]" width="72" height="24">
+    <h4>{{game.title}}</h4>
+    <p>{{game.devname}}</p>
+    <hr>
+    <div class="categories">
+        <span *ngFor="let category of game.categories">
+            {{category}}
+        </span>
+    </div>
+</div>

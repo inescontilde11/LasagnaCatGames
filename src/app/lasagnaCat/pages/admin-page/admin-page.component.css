@@ -1,0 +1,13 @@
+.container {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.user {
+    display: grid;
+    grid-template-columns: 200px 50px;
+    justify-content: center;
+    margin: 15px;
+    border-bottom: 2px solid #b0230a;
+}

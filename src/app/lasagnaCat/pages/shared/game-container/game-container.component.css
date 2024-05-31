@@ -1,0 +1,27 @@
+.container {
+    border: 1px solid #b0230b;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+    margin: 8px;
+    cursor: pointer;
+    min-height: 50px;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+}
+
+.categories span {
+    background-color: #eaa69a;
+    padding: 2px;
+    margin: 2px;
+    font-size: 8px;
+    color: #7d2516;
+    font-family: LBRegular;
+    border-radius: 4px;
+}

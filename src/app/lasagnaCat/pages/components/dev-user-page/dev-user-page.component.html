@@ -1,0 +1,108 @@
+<shared-nav-bar [rol]="rol"></shared-nav-bar>
+<ng-container *ngIf="!this.editable; else showForm">
+	<form>
+		<div class="formContainer">
+			<div class="left">
+				<img [src]="this.img">
+			</div>
+			<div class="right">
+				<div class="wrap-input100 form-inputs">
+					<span class="label-input100">Nombre de la empresa desarrolladora</span>
+					<input class="input100" [value]="this.user?.username" [disabled]="true" type="text"
+						placeholder="Nombre de la empresa desarrolladora">
+				</div>
+
+				<div class="wrap-input100  form-inputs">
+					<span class="label-input100">Descripción</span>
+					<textarea class="input100" type="text" [disabled]="true"
+					[value]="this.user?.desc || ''" placeholder="Descripción..."></textarea>
+				</div>
+
+				<div class="wrap-input100 form-inputs">
+					<span class="label-input100">Correo</span>
+					<input class="input100" type="email" [disabled]="true"
+					[value]="this.user?.email" placeholder="Correo electrónico">
+				</div>
+
+				<div class="wrap-input100 form-inputs">
+					<span class="label-input100">Teléfono</span>
+					<input class="input100" type="tel" [value]="this.user?.tfno" [disabled]="true">
+				</div>
+
+				<div class="container-login100-form-btn">
+					<div class="wrap-login100-form-btn">
+						<button class="editBtn" (click)="this.editable = true">
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+								class="bi bi-pencil-fill" viewBox="0 0 16 16">
+								<path
+									d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.5.5 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11z" />
+							</svg>
+							Editar perfil
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</ng-container>
+<ng-template #showForm>
+	<form [formGroup]="myEditableForm">
+		<div class="formContainer">
+			<div>
+				<div class="left">
+					<img [src]="this.img">
+				</div>
+				<input #inputFile type="file" (change)="fileValue($event)">
+			</div>
+			<div class="right">
+				<div class="wrap-input100 form-inputs">
+					<span class="label-input100">Nombre de la empresa desarrolladora</span>
+					<input class="input100" type="text" formControlName="username"
+						placeholder="Nombre de la empresa desarrolladora">
+				</div>
+
+				<div class="wrap-input100  form-inputs">
+					<span class="label-input100">Descripción</span>
+					<textarea class="input100" type="text" formControlName="desc" placeholder="Descripción..."></textarea>
+				</div>
+
+				<div class="wrap-input100 form-inputs">
+					<span class="label-input100">Correo</span>
+					<input class="input100" type="email" formControlName="email" placeholder="Correo electrónico">
+				</div>
+
+				<div class="wrap-input100 form-inputs">
+					<span class="label-input100">Teléfono</span>
+					<input class="input100" type="tel" formControlName="tfno">
+				</div>
+
+				<div class="wrap-input100 form-inputs">
+					<span class="label-input100">Nueva contraseña</span>
+					<input class="input100 form-inputs" type="password" formControlName="pwd">
+				</div>
+
+				<div class="container-login100-form-btn formBtns">
+					<div class="wrap-login100-form-btn">
+						<button class="login100-form-btn saveBtn" style="background-color: #f42f2f;"
+							(click)="this.editable = false">
+							Cancelar
+						</button>
+					</div>
+					<div class="wrap-login100-form-btn">
+						<button class="login100-form-btn saveBtn"
+							(click)="this.editable = false; updateUser()"
+							[disabled]="myEditableForm.invalid"
+							type="submit">
+							Guardar
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</ng-template>
+<div class="delete">
+	<button class="logoutBtn" (click)="logOut()">Cerrar sesión</button>
+	<button class="deleteBtn" (click)="openAreYouSureDialog()">Eliminar cuenta</button>
+</div>
+<shared-footer style="position: relative; bottom: 0; width: 100%; margin-top: 10px;"></shared-footer>

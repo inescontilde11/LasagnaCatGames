@@ -1,0 +1,33 @@
+.title {
+    cursor: pointer;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.title:hover {
+    color: #b0230a;
+}
+
+.dev {
+    font-weight: 200;
+    color: #3b3b3b;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.dev:hover {
+    color: #b0230a;
+}
+
+
+.myGames {
+    margin-top: 20px;
+    padding: 8px;
+}
+
+.oneGame {
+    border-bottom: 2px solid #b0230a;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding: 15px;
+}

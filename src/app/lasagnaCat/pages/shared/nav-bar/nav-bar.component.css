@@ -1,0 +1,40 @@
+.navigator {
+    display: grid;
+    grid-template-columns: 30% 46% auto auto;
+    background-color: #E5DA71;
+}
+
+.dev-navigator {
+    display: grid;
+    grid-template-columns: 30% 46% auto auto;
+    background-color: #E5DA71;
+}
+
+.admin-navigator {
+    display: grid;
+    grid-template-columns: 30% auto;
+    justify-content: space-around;
+    background-color: #E5DA71;
+}
+
+button {
+    color: #791515;
+}
+
+.hoveredBtn:hover {
+    background-color: #AC2020;
+    color: white;
+}
+
+.profileBtn {
+    color: #AC2020;
+}
+
+.profileBtn:hover {
+    background-color: #AC2020;
+    color: white;
+}
+
+.logo {
+    width: 96%;
+}
